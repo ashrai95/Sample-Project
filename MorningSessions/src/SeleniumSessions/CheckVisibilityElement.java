@@ -6,6 +6,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class CheckVisibilityElement {
 	
 	/**
@@ -15,12 +17,12 @@ public class CheckVisibilityElement {
 isDisplayed()  v/s  isEnabled()  v/s   isSelected() 
 
 Notes:
-•	isDisplayed() is the method used to verify presence of a web element within the webpage.
- The method returns a “true” value if the specified web element is present on the web page and a “false” value if the web element is not present on the web page.
-•	isDisplayed() is capable to check for the presence of all kinds of web elements available.
-•	isEnabled() is the method used to verify if the web element is enabled or disabled within the webpage.
-•	isEnabled() is primarily used with buttons.
-•	isSelected() is the method used to verify if the web element is selected or not. isSelected() 
+â€¢	isDisplayed() is the method used to verify presence of a web element within the webpage.
+ The method returns a â€œtrueâ€� value if the specified web element is present on the web page and a â€œfalseâ€� value if the web element is not present on the web page.
+â€¢	isDisplayed() is capable to check for the presence of all kinds of web elements available.
+â€¢	isEnabled() is the method used to verify if the web element is enabled or disabled within the webpage.
+â€¢	isEnabled() is primarily used with buttons.
+â€¢	isSelected() is the method used to verify if the web element is selected or not. isSelected() 
 method is pre-dominantly used with radio buttons, dropdowns and checkboxes.
 
 	 * 
@@ -31,7 +33,8 @@ method is pre-dominantly used with radio buttons, dropdowns and checkboxes.
 
 	public static void main(String[] args) throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");
+		WebDriverManager.chromedriver().setup();
+		//System.setProperty("webdriver.chrome.driver", "/Users/naveenkhunteta/Downloads/chromedriver");
 
 		WebDriver driver = new ChromeDriver(); // launch chrome
 
